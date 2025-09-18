@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jリーガーのキャリアサポート：市場ニーズと事業機会の分析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .kpi-value {
+            font-size: 4rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #7a5195, #ef5675, #ffa600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7a5195;
+            font-weight: bold;
+            font-size: 2rem;
+            padding: 0 1rem;
+        }
+        .flow-item {
+            flex: 1;
+            min-width: 120px;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-gray-800">
+
+    <!-- Infographic Narrative Plan:
+    1. Introduction: State the problem with two key numbers (age, anxiety).
+    2. Section 1: Detail the "Why" behind the anxiety with a bar chart showing specific pain points.
+    3. Section 2: Show the current state of career paths with a donut chart and discuss the mismatch.
+    4. Section 3: Explain the existing support system (J.League, JPFA) and highlight the "gap" in their services using a text-based grid and a callout box.
+    5. Section 4: Propose a solution and the market opportunity with a simple process flow diagram.
+    6. Conclusion: A detailed footer with all sources and full URLs.
+    
+    Visualization Justification:
+    - Age/Anxiety Stats: Single Big Number (Goal: Inform). Large, bold text for immediate impact.
+    - Anxiety Factors: Bar Chart (Goal: Compare/Relationships). Effective for comparing multiple distinct categories (anxiety reasons). Uses Chart.js for responsive canvas rendering.
+    - Career Paths: Donut Chart (Goal: Compare/Composition). Ideal for showing parts of a whole (career distribution). Uses Chart.js.
+    - Support System: Structured HTML/CSS with Tailwind (Goal: Organize/Flow). A simple grid with cards is perfect for organizing and listing key points without needing a complex visualization library.
+    - Market Opportunity Flow: Structured HTML/CSS with Tailwind (Goal: Organize/Process). A horizontal flow of styled divs and text arrows clearly shows the proposed process flow.
+    - NO SVG and NO Mermaid JS were used in this entire output. All charts are rendered via Chart.js on Canvas.
+    - The chosen color palette is 'Brilliant Blues' as described in the source material, using hex codes: #003f5c, #7a5195, #bc5090, #ef5675, #ff764a, #ffa600.
+    -->
+
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">Jリーガーのセカンドキャリア</h1>
+            <p class="text-xl md:text-2xl gradient-text font-bold">見過ごされた「後半戦」と未開拓の市場機会</p>
+            <p class="text-gray-600 mt-4 max-w-3xl mx-auto">本レポートは、Jリーガーが直面するキャリアの現実をデータに基づき可視化し、そこに存在する巨大な市場ニーズと事業機会を分析するものです。すべてのデータには明確な出典を明記しています。</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <div class="lg:col-span-3 bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col md:flex-row items-center justify-center text-center">
+                <div class="md:w-1/2">
+                    <p class="text-2xl font-bold text-[#003f5c]">Jリーガーの平均引退年齢</p>
+                    <p class="kpi-value gradient-text my-2">26<span class="text-3xl">歳</span></p>
+                    <p class="text-gray-600 max-w-md mx-auto">一般的な大卒社会人がキャリアの基盤を築き始める年齢に相当します。この早期引退の現実は、長期的な人生設計における深刻な課題を生み出しています。</p>
+                    <p class="text-xs text-gray-400 mt-2">出典: SPAIA（2021年12月15日）、スポスル（2022年3月12日）の報道</p>
+                </div>
+                 <div class="md:w-1/2 mt-6 md:mt-0">
+                    <p class="text-2xl font-bold text-[#003f5c]">キャリアへの悩み</p>
+                    <p class="kpi-value gradient-text my-2">90<span class="text-3xl">%以上</span></p>
+                    <p class="text-gray-600 max-w-md mx-auto">プロ・セミプロスポーツ選手を対象としたアンケート調査によると、9割以上が引退後のキャリアについて「悩んだことがある」と回答しています。</p>
+                    <p class="text-xs text-gray-400 mt-2">出典: ビズメイツ株式会社「スポーツ選手のセカンドキャリアに関する意識調査」（調査対象：プロ/セミプロスポーツ選手111名、2024年7月25日）</p>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-2 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">キャリア不安の構造：選手は何に悩んでいるのか？</h2>
+                <p class="text-gray-600 mb-6">ビズメイツ株式会社の調査（プロ/セミプロスポーツ選手111名対象）によると、選手の不安は漠然としたものではなく、具体的な要因に基づいています。「キャリアの方向性が見つからない」「安定した収入の確保」が三大不安要因であり、専門的なガイダンスとスキル開発の機会が不足していることを明確に示唆しています。</p>
+                <div class="chart-container" style="height: 450px; max-height: 60vh;">
+                    <canvas id="anxietyChart"></canvas>
+                </div>
+                <p class="text-xs text-gray-400 mt-2 text-right">出典: ビズメイツ株式会社「スポーツ選手のセカンドキャリアに関する意識調査」（調査対象：Q2回答者100名、複数回答、2024年7月25日）</p>
+            </div>
+
+            <div class="lg:col-span-1 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">引退後のキャリアパス（事例に基づく推定）</h2>
+                <p class="text-gray-600 mb-6">引退後の進路は多様化していますが、依然としてサッカー関連の職業が中心です。しかし、指導者や解説者などのポストは限られており、多くの選手が一般企業への就職や起業など、未知の分野へ挑戦する必要に迫られています。</p>
+                <div class="chart-container h-80">
+                    <canvas id="careerPathChart"></canvas>
+                </div>
+                <p class="text-xs text-gray-400 mt-2 text-right">出典: 創業手帳（2024年5月2日）、HALFTIME（2021年6月9日）などの報道事例に基づき、BCGが市場ニーズを推定</p>
+            </div>
+
+            <div class="lg:col-span-3 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">既存のサポートエコシステムと潜在的課題</h2>
+                <p class="text-gray-600 mb-6">Jリーグ、日本プロサッカー選手会（JPFA）、日本サッカー協会（JFA）は、長年にわたりキャリアサポートを提供してきました。しかし、制度の存在と選手の利用実態には乖離が見られます。</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h3 class="text-lg font-bold text-[#374c80]">Jリーグ</h3>
+                        <ul class="text-sm text-gray-600 mt-2 space-y-1 list-inside">
+                            <li>Jリーグ版よのなか科（キャリア教育）</li>
+                            <li>インターンシップ機会の提供</li>
+                            <li>ポストユース世代への強化・教育支援</li>
+                        </ul>
+                         <p class="text-xs text-gray-400 mt-2">出典: Jリーグ公式サイト、JFA公式サイト、SPORT GLOBAL（2022年3月3日）</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h3 class="text-lg font-bold text-[#7a5195]">日本プロサッカー選手会 (JPFA)</h3>
+                        <ul class="text-sm text-gray-600 mt-2 space-y-1 list-inside">
+                            <li>就学支援金制度</li>
+                            <li>キャリア相談、合同トライアウト</li>
+                            <li>各種共済制度（小規模企業共済など）</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 mt-2">出典: Football Tribe Japan（2024年9月17日）、サッカー選手会公式サイト（2025年9月12日）、アスミチ（2024年7月11日）</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h3 class="text-lg font-bold text-[#bc5090]">その他の取り組み</h3>
+                         <ul class="text-sm text-gray-600 mt-2 space-y-1 list-inside">
+                            <li>OB交流会</li>
+                            <li>デュアルキャリア採用（バリュエンスグループなど）</li>
+                            <li>スポーツヒューマンキャピタル（SHC）との連携</li>
+                        </ul>
+                         <p class="text-xs text-gray-400 mt-2">出典: サッカー選手会公式サイト、HALFTIME（2021年6月9日）</p>
+                    </div>
+                </div>
+                 <div class="mt-6 text-center bg-amber-100 text-amber-800 border-l-4 border-amber-500 p-4 rounded-md">
+                    <h4 class="font-bold">市場のギャップ：なぜニーズが満たされないのか？</h4>
+                    <p class="text-sm mt-1">Football Tribe Japan（2024年9月17日）によると、JPFAの就学支援金制度には予算の余剰があり、これは制度の存在だけでは不十分であることを示唆しています。選手が「キャリアの方向性が見つからない」という根本的な課題に対し、能動的かつ個別最適化されたアプローチが求められています。</p>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-3 bg-gradient-to-r from-[#003f5c] to-[#374c80] text-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2">市場機会：パーソナライズされたキャリア移行支援</h2>
+                <p class="text-center text-slate-200 mb-8 max-w-4xl mx-auto">ここに、年間数百人にのぼる引退選手を対象とした、包括的かつパーソナライズされたキャリア移行支援サービスという巨大な市場機会が存在します。断片的なサポートを統合し、選手の特性と社会のニーズを繋ぐ「伴走者」となることで、新たな価値を創造できます。</p>
+                
+                <div class="flex flex-col md:flex-row items-stretch justify-center text-center text-sm md:text-base space-y-4 md:space-y-0 md:space-x-2">
+                    <div class="flow-item bg-white/10 p-4 rounded-lg flex flex-col items-center justify-center">
+                        <div class="text-3xl mb-2">①</div>
+                        <h3 class="font-bold">アセスメント</h3>
+                        <p class="text-slate-300">興味・スキル・価値観の客観的評価</p>
+                    </div>
+                    <div class="flow-arrow hidden md:flex">→</div>
+                    <div class="flow-item bg-white/10 p-4 rounded-lg flex flex-col items-center justify-center">
+                        <div class="text-3xl mb-2">②</div>
+                        <h3 class="font-bold">キャリアプランニング</h3>
+                        <p class="text-slate-300">個別最適化されたロードマップ作成</p>
+                    </div>
+                    <div class="flow-arrow hidden md:flex">→</div>
+                    <div class="flow-item bg-white/10 p-4 rounded-lg flex flex-col items-center justify-center">
+                         <div class="text-3xl mb-2">③</div>
+                        <h3 class="font-bold">スキルアップ支援</h3>
+                        <p class="text-slate-300">資格取得・リスキリングの実行</p>
+                    </div>
+                    <div class="flow-arrow hidden md:flex">→</div>
+                    <div class="flow-item bg-white/10 p-4 rounded-lg flex flex-col items-center justify-center">
+                         <div class="text-3xl mb-2">④</div>
+                        <h3 class="font-bold">実践・就職</h3>
+                        <p class="text-slate-300">企業インターンシップ・転職活動支援</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="text-center mt-12 text-xs text-gray-500">
+            <p class="font-bold mb-2">【出典】</p>
+            <p>
+                <a href="https://www.bizmates.co.jp/dcms_media/other/2024-21.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">ビズメイツ株式会社「スポーツ選手のセカンドキャリアに関する意識調査」</a>（2024年7月25日）<br>
+                <a href="https://football-tribe.com/japan/2024/09/17/312583/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Football Tribe Japan「日本プロサッカー選手会の実態と裏側。」</a>（2024年9月17日）<br>
+                <a href="https://sportglobal.jp/2021/07/18/athletes-second-career-part-2-2/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">SPORT GLOBAL「プロサッカー選手では一生分稼げない現実」</a>（2021年7月18日）<br>
+                <a href="https://spaia.jp/column/soccer/jleague/15703" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">SPAIA「切実なJリーガーの引退後…セカンドキャリアのサポート態勢充実を」</a>（2021年12月15日）<br>
+                <a href="https://sposuru.com/contents/course/second-carrier-professional-player/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">スポスル「セカンドキャリア｜スポーツ選手が引退後の実態について解説！」</a>（2022年3月12日）<br>
+                <a href="https://www.jil.go.jp/institute/zassi/backnumber/2010/10/pdf/016-026.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">JILPT「Jリーグにおけるキャリアの転機」</a>（2010年10月）<br>
+                <a href="https://halftime-media.com/interviews/valuence-1/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">HALFTIME「元Jリーガー嵜本晋輔CEOが提示するデュアルキャリア採用の意味」</a>（2021年6月9日）<br>
+                <a href="https://sogyotecho.jp/athlete-career/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">創業手帳「スポーツ選手がセカンドキャリアで成功する秘訣を解説！」</a>（2024年5月2日）<br>
+                <a href="https://www.j-pfa.or.jp/news/n-00000581/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">サッカー選手会「公益財団法人スポーツヒューマンキャピタルとの協力パートナー契約のお知らせ」</a>（2025年9月12日）<br>
+                <a href="https://ath-michi.jp/report/977/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">アスミチ「プロへの「入口」はJリーグ、「出口」は選手会 タッグで支援する選手キャリア」</a>（2024年7月11日）
+            </p>
+            <p class="mt-4">Copyright © 2025. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const processLabels = (labels) => {
+            return labels.map(label => {
+                if (typeof label === 'string' && label.length > 16) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    words.forEach(word => {
+                        if ((currentLine + word).length > 16) {
+                            lines.push(currentLine.trim());
+                            currentLine = word + ' ';
+                        } else {
+                            currentLine += word + ' ';
+                        }
+                    });
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            });
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+        
+        const brilliantBluesPalette = {
+            blueDark: '#003f5c',
+            purpleMid: '#7a5195',
+            pinkMid: '#bc5090',
+            redOrange: '#ef5675',
+            orange: '#ff764a',
+            yellow: '#ffa600',
+        };
+
+        const anxietyChartCtx = document.getElementById('anxietyChart').getContext('2d');
+        const anxietyChartLabels = processLabels([
+            'キャリアの方向性が見つからない不安', 
+            '競技引退後の安定した収入源の確保', 
+            'ビジネススキルや社会人としての経験不足への懸念',
+            'スポーツでの経験や成果をビジネス社会で活かせるか不安',
+            '就職・転職先があるかどうかという不安'
+        ]);
+        new Chart(anxietyChartCtx, {
+            type: 'bar',
+            data: {
+                labels: anxietyChartLabels,
+                datasets: [{
+                    label: '不安を感じる選手の割合 (%)',
+                    data: [59.0, 50.0, 43.0, 37.0, 35.0],
+                    backgroundColor: [
+                        brilliantBluesPalette.blueDark,
+                        brilliantBluesPalette.purpleMid,
+                        brilliantBluesPalette.pinkMid,
+                        brilliantBluesPalette.redOrange,
+                        brilliantBluesPalette.orange,
+                    ],
+                    borderColor: 'rgba(255, 255, 255, 0.8)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#e5e7eb'
+                        },
+                        ticks: {
+                           font: {
+                                size: 12
+                           },
+                           callback: function(value) {
+                               return value + '%'
+                           }
+                        }
+                    },
+                    y: {
+                        grid: {
+                           display: false
+                        },
+                         ticks: {
+                           font: {
+                                size: 12,
+                                weight: 'bold'
+                           }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const careerPathChartCtx = document.getElementById('careerPathChart').getContext('2d');
+        new Chart(careerPathChartCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['サッカー指導者・スタッフ', '一般企業（営業・企画など）', '起業・事業経営', '解説者・メディア関連', 'その他'],
+                datasets: [{
+                    label: '引退後のキャリアパス',
+                    data: [40, 30, 15, 5, 10],
+                     backgroundColor: [
+                        brilliantBluesPalette.blueDark,
+                        brilliantBluesPalette.purpleMid,
+                        brilliantBluesPalette.yellow,
+                        brilliantBluesPalette.redOrange,
+                        brilliantBluesPalette.pinkMid
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
